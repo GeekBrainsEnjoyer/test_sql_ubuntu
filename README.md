@@ -1,1 +1,0 @@
-# test_sql_ubuntu
