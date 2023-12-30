@@ -1,10 +1,10 @@
-from abc import ABCMeta as abc
-
-
-class AnimalABC(metaclass=abc):
+import shortuuid as uuid
+class Animal:
+    animal_id_in_type = 0
     id = -1
+
     def __init__(self, name: str, birthday: str, executed_commands: str):
-        self.id = -1
+        self.id = uuid.ShortUUID().random(length=3)
         self.name = name
         self.birthday = birthday
         self.executed_commands = executed_commands
@@ -27,24 +27,11 @@ class AnimalABC(metaclass=abc):
     def setCommands(self, new_commands: str):
         self.executed_commands = new_commands
 
-
-class Animal(AnimalABC):
-    animal_id_in_type = 0
-
-    def __init__(self, name: str, birthday: str, executed_commands: str):
-        super().__init__(name, birthday, executed_commands)
-        self.id = self.incr()
-
     def getType(self):
         return self.animal_id_in_type
 
     def setType(self, new_type_id):
         self.animal_id_in_type = new_type_id
-
-    @classmethod
-    def incr(self):
-        self.id += 1
-        return self.id
 
 
 class Pet(Animal):
