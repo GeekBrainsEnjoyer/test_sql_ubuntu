@@ -2,7 +2,7 @@
 
 from model.model import Model
 
-from animals.animalClasses import Animal
+from animals.animalClasses import *
 
 
 class App():
@@ -32,13 +32,72 @@ class App():
                 chosen_animal = ""
                 print(self.model)
                 while user_input != "0":
-                    user_input = input("Введите имя животного: ")
-                    for i in range(len(a_list) - 1):
+                    user_input = input(
+                        "Введите имя животного или 0 для выхода в меню: ")
+                    for i in range(len(a_list)):
                         if a_list[i].name == user_input:
                             chosen_animal = a_list[i].name
-                        else:
-                            print(
-                                "Такого животного нет. Введите имя еще раз или 0 для выхода.")
+                            print(a_list[i])
+                            user_input = input(
+                                "В какой класс вы хотите опеределить животное:\n1 - кошка\n2 - собака\n3 - хомяк\n4 - осел\n5 - лошадь\n6 - верлюд\n0 - для выхода в меню\n")
 
+                            if user_input == "1":
+                                a_list[i] = Cat(
+                                    a_list[i].getName(), a_list[i].getBirthday(), a_list[i].getCommands())
+                            elif user_input == "2":
+                                a_list[i] = Dog(
+                                    a_list[i].getName(), a_list[i].getBirthday(), a_list[i].getCommands())
+                            elif user_input == "3":
+                                a_list[i] = Hamster(
+                                    a_list[i].getName(), a_list[i].getBirthday(), a_list[i].getCommands())
+                            elif user_input == "4":
+                                a_list[i] = Donkey(
+                                    a_list[i].getName(), a_list[i].getBirthday(), a_list[i].getCommands())
+                            elif user_input == "5":
+                                a_list[i] = Horse(
+                                    a_list[i].getName(), a_list[i].getBirthday(), a_list[i].getCommands())
+                            elif user_input == "6":
+                                a_list[i] = Camel(
+                                    a_list[i].getName(), a_list[i].getBirthday(), a_list[i].getCommands())
+                            else:
+                                print(
+                                    "Такого класса нет. Введите имя еще раз или 0 для выхода.")
+
+                    if chosen_animal == "":
+                        print(
+                            "Такого животного нет. Введите имя еще раз или 0 для выхода.")
+
+            elif user_input == "3":
+                a_list = self.model.animal_list
+                chosen_animal = ""
+                while user_input != "0":
                     user_input = input(
-                        "В какой класс вы хотите опеределить животное:\n1 - кошка\n2 - собака\n3 - хомяк\n4 - осел\n5 - лошадь\n6 - верлюд\n0 - для выхода в меню\n")
+                        "Введите имя животного или 0 для выхода в меню: ")
+                    for i in range(len(a_list)):
+                        if a_list[i].name == user_input:
+                            chosen_animal = a_list[i].name
+                            print(
+                                f"{a_list[i].getName()} знает команды: {a_list[i].getCommands()}")
+
+                    if chosen_animal == "":
+                        print(
+                            "Такого животного нет. Введите имя еще раз или 0 для выхода.")
+
+            elif user_input == "4":
+                a_list = self.model.animal_list
+                chosen_animal = ""
+                while user_input != "0":
+                    user_input = input(
+                        "Введите имя животного или 0 для выхода в меню: ")
+                    for i in range(len(a_list)):
+                        if a_list[i].name == user_input:
+                            chosen_animal = a_list[i].name
+                            user_input = input("Введите новую команду: ")
+                            a_list[i].setCommands(
+                                f"{a_list[i].getCommands()}  {user_input}")
+                            print(
+                                f"{a_list[i].getName()} знает команды: {a_list[i].getCommands()}")
+
+                    if chosen_animal == "":
+                        print(
+                            "Такого животного нет. Введите имя еще раз или 0 для выхода.")
