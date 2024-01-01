@@ -1,7 +1,8 @@
 from app import App
 from animals.animalClasses import *
 
-from model.model import Model
+from mvp.model import Model
+from mvp.presenter import Presenter
 
 saved_list = [Cat("cat", "qwe", "qwe"),
               Animal("a1", "qwe", "qwe"),
@@ -10,7 +11,7 @@ saved_list = [Cat("cat", "qwe", "qwe"),
               Horse("horse", "qwe", "qwe"),
               Animal("a3", "qwe", "qwe")]
 
-a = App(Model(saved_list))
+a = App(Presenter(Model(saved_list)))
 
 # a = App()
 a.start()

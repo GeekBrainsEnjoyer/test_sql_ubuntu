@@ -8,7 +8,7 @@ class Model:
         self.count = AnimalCount()
         self.count.setCount(len(animal_list))
 
-    def addAnimal(self, animal: Animal):
+    def addAnimalInModel(self, animal: Animal):
         self.animal_list.append(animal)
         self.count.add()
         return animal
@@ -19,7 +19,7 @@ class Model:
                 del self.animal_list[i]
         self.count.delt()
 
-    def getAnimal_list(self):
+    def getAnimals_list(self):
         return self.animal_list
 
     def __str__(self) -> str:
