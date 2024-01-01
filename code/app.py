@@ -14,7 +14,7 @@ class App():
         while user_input != "0":
             self.presenter.showAnimals()
 
-            self.presenter.showAnimalCount()
+            print(self.presenter.showAnimalCount())
 
             user_input = input(
                 "\n1 - Завести новое животное\n2 - определять животное в правильный класс\n3 - увидеть список команд, которое выполняет животное\n4 - обучить животное новым командам\n0 - выход\n")

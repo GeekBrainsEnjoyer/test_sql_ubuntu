@@ -4,35 +4,35 @@ import shortuuid as uuid
 class Animal:
 
     def __init__(self, name: str, birthday: str, executed_commands: str):
-        self.id = uuid.ShortUUID().random(length=3)
-        self.name = name
-        self.birthday = birthday
-        self.executed_commands = executed_commands
-        self.animal_type_name = "animal"
+        self.__id = uuid.ShortUUID().random(length=3)
+        self.__name = name
+        self.__birthday = birthday
+        self.__executed_commands = executed_commands
+        self.__animal_type_name = "animal"
 
     def __str__(self) -> str:
-        return f"ID: {self.id}\nname: {self.name}\nbirthday: {self.birthday}\ncommands: {self.executed_commands}\nThis animal is {self.animal_type_name}"
+        return f"\nID: {self.__id}\nname: {self.__name}\nbirthday: {self.__birthday}\ncommands: {self.__executed_commands}\nThis animal is {self.__animal_type_name}"
 
     def getName(self):
-        return self.name
+        return self.__name
 
     def getID(self):
-        return self.id
+        return self.__id
 
     def getBirthday(self):
-        return self.birthday
+        return self.__birthday
 
     def getCommands(self):
-        return self.executed_commands
+        return self.__executed_commands
 
     def setCommands(self, new_commands: str):
-        self.executed_commands = new_commands
+        self.__executed_commands = new_commands
 
     def getType(self):
-        return self.animal_type_name
+        return self.__animal_type_name
 
     def setType(self, new_type_name):
-        self.animal_type_name = new_type_name
+        self.__animal_type_name = new_type_name
 
 
 class Pet(Animal):

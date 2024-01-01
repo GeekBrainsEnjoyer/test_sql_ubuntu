@@ -2,17 +2,16 @@
 
 class AnimalCount:
     def __init__(self):
-        self.count = 0
+        self.__count = 0
 
     def add(self):
-        self.count += 1
-
-    def delt(self):
-        self.count -= 1
+        self.__count += 1
 
     def getCount(self):
-        return self.count
-    
-    def setCount(self, new_count):
-        self.count = new_count
+        return self.__count
 
+    def setCount(self, new_count):
+        self.__count = new_count
+
+    def __str__(self) -> str:
+        return f"{self.__count}"
