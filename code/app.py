@@ -5,11 +5,9 @@ from mvp.presenter import Presenter
 
 class App():
     def __init__(self, presenter=Presenter()) -> None:
-
         self.presenter = presenter
 
     def start(self):
-
         user_input = ""
         while user_input != "0":
             self.presenter.showAnimals()
@@ -23,8 +21,7 @@ class App():
                 self.presenter.addAnimal()
 
             elif user_input == "2":
-                u_i = input("Введите имя животного: ")
-                self.presenter.changeAnimalType(u_i)
+                self.presenter.changeAnimalType()
 
             elif user_input == "3":
                 u_i = input("Введите имя животного: ")

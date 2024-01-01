@@ -15,10 +15,11 @@ class Presenter:
         else:
             print(f"\nСписок животных:\n{self.__model}")
 
-    def __pickAnimal(self, selected_animal: str):
+    def __pickAnimal(self):
+        u_i = input("Введите имя животного: ")
         a_list = self.__model.getAnimals_list()
         for i in range(len(a_list)):
-            if a_list[i].getName() == selected_animal:
+            if a_list[i].getName() == u_i:
                 print(a_list[i])
                 return i
 
@@ -32,13 +33,13 @@ class Presenter:
             "Введите день рождения: "), input("Введите известные живоному команды: ")))
 
         print(f"Новое животное:\n{a}\n")
-        print(self.__model.getAnimals_list())
         self.__count.add()
+        input(f"{self.__model}")
 
-    def changeAnimalType(self, selected_animal):
+    def changeAnimalType(self):
         a_list = self.__model.getAnimals_list()
-        if (self.__pickAnimal(selected_animal) != -1):
-            i = self.__pickAnimal(selected_animal)
+        i = self.__pickAnimal()
+        if (i != -1):
             user_input = input(
                 "В какой класс вы хотите опеределить животное:\n1 - кошка\n2 - собака\n3 - хомяк\n4 - осел\n5 - лошадь\n6 - верлюд\n0 - для выхода в меню\n")
 

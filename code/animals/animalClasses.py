@@ -2,16 +2,15 @@ import shortuuid as uuid
 
 
 class Animal:
-
     def __init__(self, name: str, birthday: str, executed_commands: str):
         self.__id = uuid.ShortUUID().random(length=3)
         self.__name = name
         self.__birthday = birthday
         self.__executed_commands = executed_commands
-        self.__animal_type_name = "animal"
+        self.animal_type_name = "animal"
 
     def __str__(self) -> str:
-        return f"\nID: {self.__id}\nname: {self.__name}\nbirthday: {self.__birthday}\ncommands: {self.__executed_commands}\nThis animal is {self.__animal_type_name}"
+        return f"\nID: {self.__id}\nname: {self.__name}\nbirthday: {self.__birthday}\ncommands: {self.__executed_commands}\nThis animal is {self.animal_type_name}"
 
     def getName(self):
         return self.__name
