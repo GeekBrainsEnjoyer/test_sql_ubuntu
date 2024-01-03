@@ -11,7 +11,8 @@ saved_list = [Cat("cat", "qwe", "qwe"),
               Horse("horse", "qwe", "qwe"),
               Animal("a3", "qwe", "qwe")]
 
-a = App(Presenter(Model(saved_list)))
+if __name__ == '__main__':
+    a = App(Presenter(Model(saved_list)))
 
-# a = App()
-a.start()
+    # a = App()
+    a.start()
